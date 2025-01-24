@@ -10,9 +10,9 @@ main_folder = False
 
 os.chdir(os.getcwd())
 for f in os.listdir():
-    if f.split(".")[-1] == "py":
+    if f.split(".")[-1] in ["py", "git", "gitattributes", "gitignore"]:
         continue
-    if f not in extensions:
+    if f.split(".")[-1] not in extensions:
         extensions.append(f.split(".")[-1])
         os.mkdir(f.split(".")[-1])
     os.rename(f, f"{f.split(".")[-1]}\\{f}")
