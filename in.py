@@ -14,16 +14,21 @@ def main():
 def sort_files():
     """Sorts all files in the current directory into folders based on their file extensions.
     Files with extensions 'py', 'git', 'gitattributes', and 'gitignore' are ignored.."""
-    extensions = []
-
-    os.chdir(os.getcwd())
-    for f in os.listdir():
-        if f.split(".")[-1] in ["py", "git", "gitattributes", "gitignore"]:
-            continue
-        if f.split(".")[-1] not in extensions:
-            extensions.append(f.split(".")[-1])
-            os.mkdir(f.split(".")[-1])
-        os.rename(f, f"{f.split(".")[-1]}\\{f}")
+    full_list = os.listdir(os.getcwd())
+    files_list = [
+        f for f in full_list
+        if os.path.isfile(f)
+        and ".py" not in f
+        and ".gitignore" not in f
+        and ".gitattributes" not in f
+    ]
+    types = list(set([f.split(".")[1] for f in files_list]))
+    for file_type in types:
+        os.mkdir(file_type)
+    for file in files_list:
+        from_path = os.path.join(os.getcwd(), file)
+        to_path = os.path.join(os.getcwd(), file.split(".")[-1], file)
+        os.replace(from_path, to_path)
 
 if __name__ == "__main__":
     main()
