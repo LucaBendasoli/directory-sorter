@@ -1,4 +1,4 @@
-"""Directory Sorter is a code that will sort every file in you 
+"""IN is a module that will sort every file in you 
 desktop into different folders categorized by their extensions."""
 
 # Author: Luca Bendasoli
@@ -6,9 +6,14 @@ desktop into different folders categorized by their extensions."""
 import os
 
 def main():
-    """Sorts all the files in the same level directory
-into folders defined by the files extensions"""
+    """Main function that initiates the sorting functionality 
+    in the current directory based on their file extensions.
+    """
+    sort_files()
 
+def sort_files():
+    """Sorts all files in the current directory into folders based on their file extensions.
+    Files with extensions 'py', 'git', 'gitattributes', and 'gitignore' are ignored.."""
     extensions = []
 
     os.chdir(os.getcwd())
