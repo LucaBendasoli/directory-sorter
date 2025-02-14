@@ -43,6 +43,6 @@ python out.py
 
 1. Fork the project.
 2. Create a new branch: `git checkout -b my-new-feature`
-3. Make your changes and commit: `git commit -m 'Add new functionality'`
+3. Make your changes and commit: `git commit -m 'feat: add new functionality'`
 4. Push to the remote repository: `git push origin my-new-feature`
 5. Open a pull request.
