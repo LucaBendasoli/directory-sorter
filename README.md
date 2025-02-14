@@ -2,7 +2,7 @@
 # Directory Sorter
 
 Directory Sorter is a Python project that helps you organize and manage files on your desktop by sorting them into folders based on their file extensions. It also provides functionality to unsort the files, moving them back to the root directory.
-This project was sugested by the Python Basics module of a AI and ML course I'm taking, the goal was to practice the OS built-in library functionalities that Python provides.
+This project was sugested by the Python Basics module of an AI and ML course I'm taking, the goal was to practice the OS built-in library functionalities that Python provides.
 
 ## Features
 
